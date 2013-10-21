@@ -31,15 +31,14 @@ int eight(char* s, char* e) {
 
 // 12
 short convertRGB2ARGB(short RGB, char alpha) {
-	short ARGB = 44970;
+	short ARGB = 0;
 
 	short A = alpha & 15;
 	short R = (RGB >> 11) & 31;
 	short G = (RGB >> 6) & 31;
 	short B = RGB & 63;
-	cout << A << " " << R << " " << G << " " << B << endl;
 
-//	ARGB = (A << 12) + (R << 8) + (G << 4) + B;
+	ARGB = (A << 12) + (R << 8) + (G << 4) + B;
 	return ARGB;
 }
 
