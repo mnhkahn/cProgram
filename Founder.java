@@ -2,7 +2,7 @@ import org.omg.CORBA.PRIVATE_MEMBER;
 
 class Founder {
 	private int $abc = 20;
-	private String ÎÒ = "I";
+	private String ï¿½ï¿½ = "I";
 	public static void main(String argv[]) {
 		// 1.
 //		boolean flag = null;
@@ -27,7 +27,7 @@ class Founder {
 //		Parent child = new Founder().new Child(50, 50);
 		child.increaseX(100);
 		child.increaseY(100);
-		System.out.println("x=" + child.x + " and y=" + child.y);
+		System.out.println("x=" + child.getX() + " and y=" + child.getY());
 		Parent parent = (Parent)child;
 		System.out.println("Parent x=" + parent.x + " and y=" + parent.y);
 		
@@ -44,6 +44,10 @@ class Founder {
 		StringBuilder word = new StringBuilder("Hello");
 		getWho(word);
 		System.out.println(word.toString());
+		
+		BinarySearchTree<Value> b = new BinarySearchTree<Value>();
+		b.add(new Value(6));
+		System.out.println(b.size());
 	}
 	
 	public class Parent{
@@ -91,16 +95,16 @@ class Founder {
 		}
 	}
 	class B extends A {
-//		public int method(int a, int b) {
-//			return 0;
-//		}
+		public int method(int a, int b) {
+			return 0;
+		}
 //		private int method(int a, int b) {
 //			return 0;
 //		}
-//		private int method(int a, short b) {
-//			return a + b;
-//		}
-//		public short method(int a, int b) {
+		private int method(int a, short b) {
+			return a + b;
+		}
+//		public short method(int a, short b) {
 //			return a + b;
 //		}
 	}
@@ -122,30 +126,14 @@ class StaticTest {
 		}
 	}
 }
-interface BinaraySearchTree<T> {
-	void add(T value);
-	void remove();
-	T find(T value);
-	int size();
-}
-interface Comparable<T> {
-	public int compareTo(T o1, T o2);
-}
-class BinSearchTree<T> implements BinaraySearchTree<T> {
-	public BinSearchTree(Comparable<T> compare) {
-		
-	}
-	public void add(T value) {
-		
-	}
-	public void remove() {
-		
-	}
-	public T find(T value) {
-		return null;
-	}
-	public int size() {
-		return 0;
+class Value implements Comparable<Value>{
+	private int value;
+	
+	public Value(int value) {
+		this.value = value;
 	}
 	
+    public int compareTo(Value v) {
+        return this.value - v.value;  
+    }  
 }
