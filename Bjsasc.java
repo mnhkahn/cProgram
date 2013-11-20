@@ -1,5 +1,3 @@
-import javax.print.attribute.Size2DSyntax;
-
 public class Bjsasc {
 		
 	public void size() {

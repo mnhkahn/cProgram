@@ -37,7 +37,7 @@ class Aisino {
 		String str_3 = new String("ABC");
 		boolean b1 = str_1.equals(str_2), b2 = str_2 == str_3, b3;
 		b3 = !b1 ? b1 : b2;
-		System.out.println("6. b3=" + b3);
+		System.out.println("6. b1=" + b1 + "b2=" + b2 + "b3=" + b3);
 		
 		// 7.
 		//下面三个对象一产生即成为拉圾  
@@ -59,6 +59,14 @@ class Aisino {
         	}
         }
         System.out.println("done");
+		
+		// 17.
+		class Foo {
+			public int i = 3;
+		}
+		Object o = (Object)new Foo();
+		Foo foo = (Foo)o;
+		System.out.println("17. i=" + foo.i);
         
         // 18. A
 /*        int i = 0;
